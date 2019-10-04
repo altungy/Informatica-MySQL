@@ -1,0 +1,822 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" />
+  <Import Project="..\packages\Microsoft.NetFramework.Analyzers.2.9.2\build\Microsoft.NetFramework.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.2\build\Microsoft.NetFramework.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.NetCore.Analyzers.2.9.2\build\Microsoft.NetCore.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.2\build\Microsoft.NetCore.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\build\Microsoft.CodeQuality.Analyzers.props" Condition="Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\build\Microsoft.CodeQuality.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2AD8FAB0-377A-4D4A-A381-D97BC63AC498}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>InformáticaMySQL.My.MyApplication</StartupObject>
+    <RootNamespace>InformáticaMySQL</RootNamespace>
+    <AssemblyName>InformáticaMySQL</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>\\decimas2018\Departamentos\Informatica\Software\Informatica2018\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Informática 2018</ProductName>
+    <PublisherName>Sport Street Informática</PublisherName>
+    <ApplicationRevision>131</ApplicationRevision>
+    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>InformáticaMySQL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>InformáticaMySQL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Décimas_nuevo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D23E13F19D1353B6CB0729FDAD5D354255DAA566</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>InformáticaMySQL_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Data.Odbc, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\GAC\Microsoft.Data.Odbc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Exchange.WebServices, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Exchange.WebServices.2.2\lib\40\Microsoft.Exchange.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Exchange.WebServices.Auth, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Exchange.WebServices.2.2\lib\40\Microsoft.Exchange.WebServices.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=3.19.8.16603, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.19.8\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory.Platform, Version=3.19.8.16603, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.19.8\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Extensions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=69c3241e6f0468ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Model.Extensions.2.0.1459.0\lib\Microsoft.IdentityModel.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 11.0\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 11.0\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Outlook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Librerías\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp">
+      <HintPath>..\..\Librerías\PDFsharp\GDI+\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Rutinas45">
+      <HintPath>..\..\Librerías\Rutinas45\Rutinas45.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcercaDe.designer.vb">
+      <DependentUpon>AcercaDe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AcercaDe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Albaranes.designer.vb">
+      <DependentUpon>Albaranes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Albaranes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Articulos.designer.vb">
+      <DependentUpon>Articulos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Articulos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AvisoDía.Designer.vb">
+      <DependentUpon>AvisoDía.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AvisoDía.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bienvenida.Designer.vb">
+      <DependentUpon>Bienvenida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bienvenida.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendario.designer.vb">
+      <DependentUpon>Calendario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Calendario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chat.Designer.vb">
+      <DependentUpon>Chat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Chat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras.designer.vb">
+      <DependentUpon>Compras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Compras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactoProveedor.designer.vb">
+      <DependentUpon>ContactoProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContactoProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Efectivo.designer.vb">
+      <DependentUpon>Efectivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Efectivo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empresas.designer.vb">
+      <DependentUpon>Empresas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Empresas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EscogerImagen.Designer.vb">
+      <DependentUpon>EscogerImagen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EscogerImagen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EscogerOrdenador.designer.vb">
+      <DependentUpon>EscogerOrdenador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EscogerOrdenador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Extensiones.Designer.vb">
+      <DependentUpon>Extensiones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Extensiones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacturaciónInterna.designer.vb">
+      <DependentUpon>FacturaciónInterna.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FacturaciónInterna.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Festivos.Designer.vb">
+      <DependentUpon>Festivos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Festivos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormasPago.designer.vb">
+      <DependentUpon>FormasPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormasPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Foto.Designer.vb">
+      <DependentUpon>Foto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Foto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestiónErrores.Designer.vb">
+      <DependentUpon>GestiónErrores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GestiónErrores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalSuppressions.vb" />
+    <Compile Include="GráficoIncidencias.Designer.vb">
+      <DependentUpon>GráficoIncidencias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GráficoIncidencias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportarFestivos.Designer.vb">
+      <DependentUpon>ImportarFestivos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImportarFestivos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportarMilenium.Designer.vb">
+      <DependentUpon>ImportarMilenium.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImportarMilenium.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportarAccess.Designer.vb">
+      <DependentUpon>ImportarAccess.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImportarAccess.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Incidencias.Designer.vb">
+      <DependentUpon>Incidencias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Incidencias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IncidenciasPeriodo.Designer.vb">
+      <DependentUpon>IncidenciasPeriodo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IncidenciasPeriodo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Integridad.designer.vb">
+      <DependentUpon>Integridad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Integridad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Intranet.Designer.vb">
+      <DependentUpon>Intranet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Intranet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados.vb" />
+    <Compile Include="ListViewColumnSorter.vb" />
+    <Compile Include="LíneaFacturaInterna.designer.vb">
+      <DependentUpon>LíneaFacturaInterna.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LíneaFacturaInterna.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LíneaPedido.designer.vb">
+      <DependentUpon>LíneaPedido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LíneaPedido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LíneaProcedimiento.designer.vb">
+      <DependentUpon>LíneaProcedimiento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LíneaProcedimiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LíneaTicket.designer.vb">
+      <DependentUpon>LíneaTicket.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LíneaTicket.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menú.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menú.Designer.vb">
+      <DependentUpon>Menú.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Operador.Designer.vb">
+      <DependentUpon>Operador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operadores.Designer.vb">
+      <DependentUpon>Operadores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operadores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagoTicket.designer.vb">
+      <DependentUpon>PagoTicket.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PagoTicket.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParaChat.Designer.vb">
+      <DependentUpon>ParaChat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ParaChat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Parámetros.designer.vb">
+      <DependentUpon>Parámetros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Parámetros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Password.Designer.vb">
+      <DependentUpon>Password.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Password.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedidos.designer.vb">
+      <DependentUpon>Pedidos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Poblaciones.Designer.vb">
+      <DependentUpon>Poblaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Poblaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procedimientos.designer.vb">
+      <DependentUpon>Procedimientos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Procedimientos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedores.designer.vb">
+      <DependentUpon>Proveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Proveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RangoFechas.designer.vb">
+      <DependentUpon>RangoFechas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RangoFechas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RangoListadoArtículos.Designer.vb">
+      <DependentUpon>RangoListadoArtículos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RangoListadoArtículos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoutersInalámbricos.Designer.vb">
+      <DependentUpon>RoutersInalámbricos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RoutersInalámbricos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rutinas.vb" />
+    <Compile Include="Tablas.Designer.vb">
+      <DependentUpon>Tablas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tablas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tiendas.Designer.vb">
+      <DependentUpon>Tiendas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tiendas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimedMessage.designer.vb">
+      <DependentUpon>TimedMessage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TimedMessage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ValesPorFecha.designer.vb">
+      <DependentUpon>ValesPorFecha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ValesPorFecha.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AcercaDe.resx">
+      <DependentUpon>AcercaDe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Albaranes.resx">
+      <DependentUpon>Albaranes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Articulos.resx">
+      <DependentUpon>Articulos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AvisoDía.resx">
+      <DependentUpon>AvisoDía.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bienvenida.resx">
+      <DependentUpon>Bienvenida.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendario.resx">
+      <DependentUpon>Calendario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chat.resx">
+      <DependentUpon>Chat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras.resx">
+      <DependentUpon>Compras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactoProveedor.resx">
+      <DependentUpon>ContactoProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Efectivo.resx">
+      <DependentUpon>Efectivo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empresas.resx">
+      <DependentUpon>Empresas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EscogerImagen.resx">
+      <DependentUpon>EscogerImagen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EscogerOrdenador.resx">
+      <DependentUpon>EscogerOrdenador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extensiones.resx">
+      <DependentUpon>Extensiones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacturaciónInterna.resx">
+      <DependentUpon>FacturaciónInterna.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Festivos.resx">
+      <DependentUpon>Festivos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormasPago.resx">
+      <DependentUpon>FormasPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Foto.resx">
+      <DependentUpon>Foto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestiónErrores.resx">
+      <DependentUpon>GestiónErrores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GráficoIncidencias.resx">
+      <DependentUpon>GráficoIncidencias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportarAccess.resx">
+      <DependentUpon>ImportarAccess.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportarFestivos.resx">
+      <DependentUpon>ImportarFestivos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportarMilenium.resx">
+      <DependentUpon>ImportarMilenium.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Incidencias.resx">
+      <DependentUpon>Incidencias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IncidenciasPeriodo.resx">
+      <DependentUpon>IncidenciasPeriodo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Integridad.resx">
+      <DependentUpon>Integridad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Intranet.resx">
+      <DependentUpon>Intranet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LíneaFacturaInterna.resx">
+      <DependentUpon>LíneaFacturaInterna.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LíneaPedido.resx">
+      <DependentUpon>LíneaPedido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LíneaProcedimiento.resx">
+      <DependentUpon>LíneaProcedimiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LíneaTicket.resx">
+      <DependentUpon>LíneaTicket.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menú.resx">
+      <DependentUpon>Menú.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operador.resx">
+      <DependentUpon>Operador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operadores.resx">
+      <DependentUpon>Operadores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagoTicket.resx">
+      <DependentUpon>PagoTicket.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParaChat.resx">
+      <DependentUpon>ParaChat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parámetros.resx">
+      <DependentUpon>Parámetros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Password.resx">
+      <DependentUpon>Password.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos.resx">
+      <DependentUpon>Pedidos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Poblaciones.resx">
+      <DependentUpon>Poblaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procedimientos.resx">
+      <DependentUpon>Procedimientos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedores.resx">
+      <DependentUpon>Proveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RangoFechas.resx">
+      <DependentUpon>RangoFechas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RangoListadoArtículos.resx">
+      <DependentUpon>RangoListadoArtículos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoutersInalámbricos.resx">
+      <DependentUpon>RoutersInalámbricos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tablas.resx">
+      <DependentUpon>Tablas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiendas.resx">
+      <DependentUpon>Tiendas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimedMessage.resx">
+      <DependentUpon>TimedMessage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValesPorFecha.resx">
+      <DependentUpon>ValesPorFecha.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="InformáticaMySQL_TemporaryKey.pfx" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Décimas.ico" />
+    <Content Include="Décimas_nuevo.ico" />
+    <None Include="Resources\ejecutar.png" />
+    <None Include="Resources\ok.png" />
+    <None Include="Resources\salir.png" />
+    <None Include="Resources\mail.png" />
+    <None Include="Resources\laser.wav" />
+    <None Include="Resources\buzz.jpg" />
+    <None Include="Resources\limpieza.png" />
+    <None Include="Resources\horn.wav" />
+    <None Include="Resources\chat.png" />
+    <None Include="Resources\web.png" />
+    <None Include="Resources\telefono.png" />
+    <None Include="Resources\intranet.png" />
+    <None Include="Resources\superman.gif" />
+    <None Include="Resources\mazingerZ.jpg" />
+    <None Include="Resources\comiendo.jpg" />
+    <None Include="Resources\iker.gif" />
+    <None Include="Resources\juancarlos.gif" />
+    <None Include="Resources\fernando.jpg" />
+    <None Include="Resources\calin.gif" />
+    <None Include="Resources\agustín.gif" />
+    <None Include="Resources\importar.png" />
+    <None Include="Resources\Rafael.jpg" />
+    <None Include="Resources\outlook.png" />
+    <None Include="packages.config" />
+    <None Include="Resources\routerinalámbrico.png" />
+    <None Include="Resources\cumpleaños.gif" />
+    <None Include="Resources\campana.ico" />
+    <None Include="Resources\campana.png" />
+    <None Include="Resources\móvil.jpg" />
+    <None Include="Resources\phone.png" />
+    <None Include="Resources\ipphone.png" />
+    <None Include="Resources\spain.png" />
+    <None Include="Resources\festivos.png" />
+    <None Include="Resources\Question.png" />
+    <None Include="Resources\Information.png" />
+    <None Include="Resources\Exclamation.png" />
+    <None Include="Resources\Critical.png" />
+    <None Include="Resources\Question.bmp" />
+    <None Include="Resources\Information.bmp" />
+    <None Include="Resources\Exclamation.bmp" />
+    <None Include="Resources\Critical.bmp" />
+    <None Include="Resources\aviónpapel.png" />
+    <None Include="Resources\oro.png" />
+    <None Include="Resources\bronce.png" />
+    <None Include="Resources\plata.png" />
+    <None Include="Resources\barras.png" />
+    <None Include="Resources\copa.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\error.ico" />
+    <None Include="Resources\semáfororojo.png" />
+    <None Include="Resources\semáforoamarillo.png" />
+    <None Include="Resources\semáforoverde.png" />
+    <None Include="Resources\demonio.png" />
+    <None Include="Resources\sobrerojo.png" />
+    <None Include="Resources\sobreamarillo.png" />
+    <None Include="Resources\sobreverde.png" />
+    <None Include="Resources\agustín.png" />
+    <None Include="Resources\cararoja.png" />
+    <None Include="Resources\caraamarilla.png" />
+    <None Include="Resources\caraverde.png" />
+    <None Include="Resources\usuario.png" />
+    <None Include="Resources\miguel.png" />
+    <None Include="Resources\juancarlos.png" />
+    <None Include="Resources\iker.png" />
+    <None Include="Resources\fernando.png" />
+    <None Include="Resources\rafael.png" />
+    <None Include="Resources\adidas.jpg" />
+    <None Include="Resources\polinesia.png" />
+    <None Include="Resources\invain.png" />
+    <None Include="Resources\pedidos.jpg" />
+    <None Include="Resources\top.bmp" />
+    <None Include="Resources\end.bmp" />
+    <None Include="Resources\Lupa.bmp" />
+    <None Include="Resources\Rumanía.bmp" />
+    <None Include="Resources\Polonia.bmp" />
+    <None Include="Resources\SportStreet.jpg" />
+    <None Include="Resources\access.png" />
+    <None Include="Resources\Milenium.jpg" />
+    <None Include="Resources\estado.png" />
+    <None Include="Resources\merchant.png" />
+    <None Include="Resources\empresa.png" />
+    <None Include="Resources\tablas.jpg" />
+    <None Include="Resources\parametros.png" />
+    <None Include="Resources\money.png" />
+    <None Include="Resources\albaran.gif" />
+    <None Include="Resources\acercade.png" />
+    <None Include="Resources\carro.png" />
+    <None Include="Resources\pedidos2.jpg" />
+    <None Include="Resources\reparacion.jpg" />
+    <None Include="Resources\decimas_peq.jpg" />
+    <None Include="Resources\factura.gif" />
+    <None Include="Resources\operador.png" />
+    <None Include="Resources\articulo.jpg" />
+    <None Include="Resources\proveedor.jpg" />
+    <None Include="Resources\inventario.jpg" />
+    <None Include="Resources\ticket.jpg" />
+    <None Include="Resources\incidencia.jpg" />
+    <None Include="Resources\procedimiento.jpg" />
+    <None Include="Resources\cesta.png" />
+    <None Include="Resources\bolsa.jpg" />
+    <None Include="Resources\next1.bmp" />
+    <None Include="Resources\back1.bmp" />
+    <None Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
+      <Visible>False</Visible>
+      <ProductName>Runtime de Microsoft Visual Studio 2010 Tools para Office %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="InformáticaMySQL.pdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\analyzers\dotnet\Microsoft.CodeAnalysis.VersionCheckAnalyzer.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\analyzers\dotnet\vb\Humanizer.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\analyzers\dotnet\vb\Microsoft.CodeQuality.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\analyzers\dotnet\vb\Microsoft.CodeQuality.VisualBasic.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.2\analyzers\dotnet\vb\Microsoft.NetCore.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.2\analyzers\dotnet\vb\Microsoft.NetCore.VisualBasic.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.2\analyzers\dotnet\vb\Microsoft.NetFramework.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.2\analyzers\dotnet\vb\Microsoft.NetFramework.VisualBasic.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\build\Microsoft.CodeQuality.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\build\Microsoft.CodeQuality.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.2\build\Microsoft.NetCore.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetCore.Analyzers.2.9.2\build\Microsoft.NetCore.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.2\build\Microsoft.NetFramework.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetFramework.Analyzers.2.9.2\build\Microsoft.NetFramework.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
